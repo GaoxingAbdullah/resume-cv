@@ -38,39 +38,31 @@ Start Content
 <section>
   <div class="lightBg">
     <div class="container">
-      <div class="portfolioContentMain">
-        <div class="row g-3 g-md-4 g-lg-5 portfolioRow">
-          <div class="col-md-6 pColMain">
-            <div class="pCol">
-              <img src="images/project-img.jpg" alt="..." class="pImg">
+      <div class="portfolioCard">
+        {% for portfolio in portfolios %}
+          {% if portfolio.active %}
+        <div class="row g-4 align-items-center">
+          <div class="col-md-auto">
+            <div class="portfolioImgCol">
+              <a href="javascript:void(0)"><img src="{{ portfolio.image.url }}" alt="..."></a>
             </div>
           </div>
-          <div class="col-md-6 pColMain">
-            <div class="pCol">
-              <img src="images/project-img.jpg" alt="..." class="pImg">
-            </div>
-          </div>
-          <div class="col-md-6 pColMain">
-            <div class="pCol">
-              <img src="images/project-img.jpg" alt="..." class="pImg">
-            </div>
-          </div>
-          <div class="col-md-6 pColMain">
-            <div class="pCol">
-              <img src="images/project-img.jpg" alt="..." class="pImg">
-            </div>
-          </div>
-          <div class="col-md-6 pColMain">
-            <div class="pCol">
-              <img src="images/project-img.jpg" alt="..." class="pImg">
-            </div>
-          </div>
-          <div class="col-md-6 pColMain">
-            <div class="pCol">
-              <img src="images/project-img.jpg" alt="..." class="pImg">
+          <div class="col-md">
+            <div class="portfolioContentCol">
+              <h4 class="lgTitle"><a href="javascript:void(0)">{{portfolio.name}}</a></h4>
+              <ul class="portfolioOption">
+                <li><span class="dateLbl">{{portfolio.date.date }}</span></li>
+              </ul>
+              <p>{{portfolio.description }}</p>
             </div>
           </div>
         </div>
+        {% else %}
+          <div>
+            <h1>no portfolio</h1>
+          </div>
+        {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>

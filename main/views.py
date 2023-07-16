@@ -46,6 +46,7 @@ class PortfolioView(generic.ListView):
     model = Portfolio
     template_name = 'main/portfolio.html'
     paginate_by = 10
+    context_object_name = 'portfolios'
 
     def get_queryset(self):
         return Portfolio.objects.filter(active=True)
@@ -60,11 +61,14 @@ class BlogView(generic.ListView):
     model = Blog
     template_name = 'main/blog.html'
     paginate_by = 10
+    context_object_name = 'blogs'
 
     def get_queryset(self):
         return Blog.objects.filter(active=True)
+    
     
 
 class BlogDetailView(generic.DetailView):
     model = Blog
     template_name = 'main/blog_detail.html' 
+    context_object_name = 'blogs'

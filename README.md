@@ -21,7 +21,7 @@
 
 ### Screenshots
 ![Home Page](
-![Alt text](image.png)
+![Alt text](image.png) )
 
 ### License
 MIT License
