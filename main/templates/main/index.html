@@ -228,40 +228,28 @@
           <div class="testimonialSlider">
             <div class="swiper testimonialSwiper">
               <div class="swiper-wrapper">
+                {% for testimonial in testimonials %}
+                  {% if testimonial.active %}
                 <div class="swiper-slide">
                   <div class="testimonialCard">
                     <div class="row align-items-center">
                       <div class="col-sm-auto">
                         <div class="tImgCol">
-                          <img src="{% static  'images/user-thumb.jpg' %}" alt="...">
+                          <img src="{{ testimonial.image.url }}" alt="...">
                         </div>
                       </div>
                       <div class="col-sm">
                         <div class="tContentCol">
-                          <h4 class="xsTitle bold">Amazing to work with!</h4>
-                          <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                          <h4 class="xsTitle bold">{{testimonial.title}}</h4>
+                          <p>{{ testimonial.quote }}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="testimonialCard">
-                    <div class="row align-items-center">
-                      <div class="col-sm-auto">
-                        <div class="tImgCol">
-                          <img src="{% static  'images/user-thumb.jpg' %} "  alt="...">
-                        </div>
-                      </div>
-                      <div class="col-sm">
-                        <div class="tContentCol">
-                          <h4 class="xsTitle bold">Amazing to work with!</h4>
-                          <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {% endif %}
+                {% endfor %}
+               
               </div>
               <div class="test-swiper-button-next swiper-button-next swiperBtnStyle"></div>
               <div class="test-swiper-button-prev swiper-button-prev swiperBtnStyle"></div>
@@ -285,28 +273,22 @@
             <a href="javascript:void(0)" class="simpleLink">View all</a>
           </div>
         </div>
+        {% for post in blogs %}
+          {% if post.active %}
         <div class="row g-3">
-          <div class="col-lg-6">
+          <div class="col-lg-6 py-2">
             <div class="cardStyle1">
-              <h4 class="mdTitle cs1Title"><a href="javascript:void(0)">How to implement Django into your project</a></h4>
+              <h4 class="mdTitle cs1Title"><a href="{{post.id}}">{{post.name}}</a></h4>
               <ul class="cardOptionCol">
-                <li>08 Oct 2021</li>
-                <li>Django</li>
+                <li>{{post.timestamp.date}}</li>
+                <li>{{post.author}}</li>
               </ul>
-              <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="cardStyle1">
-              <h4 class="mdTitle cs1Title"><a href="javascript:void(0)">Using code to structure your marketplace</a></h4>
-              <ul class="cardOptionCol">
-                <li>08 Oct 2021</li>
-                <li>Django</li>
-              </ul>
-              <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+              <p>{{post.description}}</p>
             </div>
           </div>
         </div>
+        {% endif %}
+        {% endfor %}
       </div>
     </div>
   </section>
