@@ -54,7 +54,7 @@ class PortfolioView(generic.ListView):
 
 class PortfolioDetailView(generic.DetailView):
     model = Portfolio
-    template_name = 'main/portfolio_detail.html'
+    template_name = 'main/portfolio-detail.html'
 
 
 class BlogView(generic.ListView):
@@ -70,5 +70,6 @@ class BlogView(generic.ListView):
 
 class BlogDetailView(generic.DetailView):
     model = Blog
-    template_name = 'main/blog_detail.html' 
+    template_name = 'main/blog-detail.html' 
     context_object_name = 'blogs'
+    

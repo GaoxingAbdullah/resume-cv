@@ -4,7 +4,7 @@
 <!-- ================================
   Start SEO block
 ================================ -->
-{% block title %}Resume App - Home{% endblock %}
+{% block title %}Resume App - Blog Detail {% endblock %}
 {% block description %}{% endblock %}
 {% block keywords %}{% endblock %}
 <!-- ================================
@@ -18,31 +18,29 @@
 
 
 {% block content %}
-    <!-- ================================
-End Navigation Bar
-================================= -->
 
 <!-- ================================
 Start Content
 ================================= -->
+
 <section>
   <div class="innerPageBannerCol">
     <div class="container">
       <div class="row g-4 g-md-3  align-items-center">
         <div class="col-md-6">
           <div class="bannerContent">
-            <h1 class="xlTitle pb-md-3">Blog title</h1>
+            <h1 class="xlTitle pb-md-3">{{blog.name}}}</h1>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-auto">
           <div class="authorCol">
-            <h4 class="smTitle pb-3">Bobby Stearman</h4>
+            <h4 class="smTitle pb-3">{{blog.author }}</h4>
           </div>
         </div>
         <div class="col-md">
-          <h4 class="smTitle pb-3">12-10-2021</h4>
+          <h4 class="smTitle pb-3">{{blog.date.date}}</h4>
         </div>
       </div>
     </div>
@@ -52,19 +50,13 @@ Start Content
 <section>
   <div class="sectionSpaceSm">
     <div class="container">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Aenean congue imperdiet lorem ut posuere. Maecenas nec accumsan 
-      risus, quis luctus libero. Morbi a nulla ac felis scelerisque 
-      feugiat quis vitae turpis. Vivamus nec augue vel enim scelerisque 
-      cursus. Curabitur efficitur ipsum quis turpis bibendum egestas. 
-      Nunc ac euismod dolor. Vestibulum nec ipsum fermentum, semper 
-      quam eu, porttitor elit. Maecenas efficitur ex eget augue euismod 
-      semper. Curabitur pharetra tortor vel orci volutpat semper. 
-      Donec feugiat mauris ante. In hac habitasse platea dictumst.
+      <p>
+        {{ blog.body }}
       </p>
     </div>
   </div>
 </section>
+
 <!-- ================================
 End Content
 ================================= -->
