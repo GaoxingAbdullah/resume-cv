@@ -29,18 +29,18 @@ Start Content
       <div class="row g-4 g-md-3  align-items-center">
         <div class="col-md-6">
           <div class="bannerContent">
-            <h1 class="xlTitle pb-md-3">{{blog.name}}}</h1>
+            <h1 class="xlTitle pb-md-3">{{blogs.name|title }}</h1>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-auto">
           <div class="authorCol">
-            <h4 class="smTitle pb-3">{{blog.author }}</h4>
+            <h4 class="smTitle pb-3">{{blogs.author|title }}</h4>
           </div>
         </div>
         <div class="col-md">
-          <h4 class="smTitle pb-3">{{blog.date.date}}</h4>
+          <h4 class="smTitle pb-3">{{blogs.timestamp.date}}</h4>
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@ Start Content
   <div class="sectionSpaceSm">
     <div class="container">
       <p>
-        {{ blog.body }}
+        {{ blogs.body|safe}}
       </p>
     </div>
   </div>

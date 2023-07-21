@@ -1,6 +1,6 @@
 # Digital Resume / CV APP 
 
-## Digital Resume with a Python  Backend  -- Django
+## Django app to digitise your resume and help you stand out in a crowd.
 
 ### Features
 - [x] Create a Resume
